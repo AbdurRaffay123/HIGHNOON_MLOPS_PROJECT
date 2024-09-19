@@ -1,0 +1,206 @@
+/* Main container with background image */
+.container {
+  background-image: url('../assets/bgMain.png'); 
+  background-size: cover; 
+  background-position: center; 
+  min-height: 100vh; 
+  padding: 20px; 
+  color: #fff;
+  position: relative; /* Added to support loading overlay */
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.5); /* Start smaller */
+  }
+  to {
+    opacity: 1;
+    transform: scale(1); /* End at normal size */
+  }
+}
+
+.container_entry {
+  animation: zoomIn 2s ease-in-out; /* Apply the same fade-in effect */
+}
+
+/* Loading overlay for the whole screen */
+.loading-overlay {
+  position: fixed; /* Covers the entire screen */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent dark background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999; /* Make sure it's on top of all other content */
+}
+
+/* Container for the loading icon */
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Loading icon styling */
+.loading-icon {
+  height: 100px; /* Size of the loading icon */
+  width: 100px;
+}
+
+/* Style for the main heading */
+h1 {
+  text-align: center;
+  font-size: 46px;
+  font-weight: 700;
+  color: #e0732a;
+}
+
+/* Container for file input and upload button */
+.container_entry {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+/* Style for the file input */
+.container_entry input {
+  width: 18%;
+  height: 100px;
+  padding: 18vh;
+  border-radius: 18px;
+  font-size: medium;
+  font-weight: 700;
+  cursor: pointer;
+  color: black;
+  background: transparent;
+  border: 2px dashed #090909;
+  border: 2px solid rgba(0, 0, 0, 0.2); /* Transparent border */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow */
+  animation: zoomIn 1s ease-in-out ease-in-out;
+}
+
+/* Hover effect for the file input */
+.container_entry input:hover {
+  background-color: #f6f6f6;
+  border-color: #e4712a;
+  color: black;
+}
+
+/* Style for the upload button */
+.container_entry button {
+  margin: 35px;
+  border-radius: 5px;
+  color: white;
+  width: 160px;
+  height: 51px;
+  background-color: #e4712a;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  border: 2px solid rgba(0, 0, 0, 0.2); /* Transparent border */
+}
+
+/* Hover effect for the button */
+.container_entry button:hover {
+  transition: all 0.5s ease;
+  background-color: rgb(255, 85, 0);
+  border: 2px solid white;
+}
+
+/* Container for images */
+.images-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white background */
+  border: 2px solid rgba(0, 0, 0, 0.2); /* Transparent black border */
+  border-radius: 10px; /* Rounded corners for the border box */
+  padding: 20px; /* Padding inside the border box */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow for better visibility */
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.5s ease-in-out; /* Smooth fade-in effect */
+}
+
+/* Show the images container when content is available */
+.images-container.show {
+  opacity: 1;
+}
+
+/* Container for a single image */
+.image_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Image styling */
+.image_container img {
+  width: 96.5%;
+  height: 647px;
+  margin: 15px 0px 20px 0px;
+}
+
+/* Container for two plots */
+.two_plots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Styling for the image containers within two plots */
+.image1_container {
+  width: 72%;
+}
+
+.image1_container img {
+  width: 72%;
+  margin-left: 75px;
+  margin-top: 22px;
+}
+
+.image2_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image2_container img {
+  width: 90%;
+  margin-right: 110px;
+  margin-top: -20px;
+}
+
+/* Product ID display styling */
+.imagesContainer {
+  align-content: center;
+}
+
+
+/* Smooth Scroll Container */
+.images-container {
+  opacity: 0;
+  transition: opacity 1s ease-in-out; /* Fade-in effect */
+}
+
+/* Add this class to show the images with fade-in effect */
+.images-container.show {
+  opacity: 1;
+}
+
+/* Ensure images-container takes full width */
+.images-container {
+  width: 100%;
+  max-width: 1200px; /* Adjust as needed */
+  margin: 0 auto;
+}
